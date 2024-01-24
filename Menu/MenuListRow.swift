@@ -32,13 +32,20 @@ struct MenuListRow: View {
             
             Spacer()
             
+
             Stepper("", value: $menuItem.count, in: 0...5)
             
-            if menuItem.count > 0 {
+            if menuItem.count >= 0 {
                 Text(String(menuItem.count))
+                    .font(.headline)
+                    .frame(width:20)
+            }else{
+                Text("")
+                    .frame(width:20)
             }
 
-            
+            Spacer()
+                        
         }
         .listRowSeparator(.hidden)
         .listRowBackground(
